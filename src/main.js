@@ -10,10 +10,30 @@ var config = {
 
 var game = new Phaser.Game(config);
 
+
+function createInput() {
+    var input = game.add.dom(400, 550, 'input', null, 'type="text"');
+    input.scaleX = 0.5;
+    input.scaleY = 0.5;
+    input.style.width = '200px';
+    input.style.height = '40px';
+    input.style.fontSize = '24px';
+    input.style.padding = '8px';
+    input.style.border = '2px solid #ccc';
+    input.style.borderRadius = '8px';
+    input.style.background = '#fff';
+    input.style.color = '#000';
+    input.style.textAlign = 'center';
+    input.value = 'Digite algo';
+}
+
+
+
+
 function preload() {
-    this.load.spritesheet('sprite', 'assets/gato.png', {
-        frameWidth: 100,
-        frameHeight: 100
+    this.load.spritesheet('sprite', 'assets/penguin.png', {
+        frameWidth:  600,
+        frameHeight: 600
     });
 
 }
@@ -21,7 +41,7 @@ function preload() {
 var duration;
 
 function create() {
-    var chat = document.getElementById('chat').value   
+    this.cameras.main.setBackgroundColor('#fff')
     var sprite = this.add.sprite(this.cameras.main.centerX, this.cameras.main.centerY, 'sprite');
     var walkAnimation = this.anims.create({
         key: 'walk',
