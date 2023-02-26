@@ -11,9 +11,9 @@ var config = {
 var game = new Phaser.Game(config);
 
 function preload() {
-    this.load.spritesheet('sprite', 'assets/finx.jpg', {
-        frameWidth: 64,
-        frameHeight: 64
+    this.load.spritesheet('sprite', 'assets/gato.png', {
+        frameWidth: 100,
+        frameHeight: 100
     });
 
 }
